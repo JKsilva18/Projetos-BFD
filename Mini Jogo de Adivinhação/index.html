@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Jogo de Advinhação com Números</title>
+</head>
+<body>
+    <script>
+    let numeroSecreto = 18
+    let controle = 0
+    let maxDeTentativa = 10
+    let armazenamentoDeTentativas = []
+     while (controle < maxDeTentativa ) {
+        let tentativa = Number(prompt("Tente adivinhar o numero secreto! Digite um numero entre 1 a 100 e boa sorte!"))
+
+        armazenamentoDeTentativas.push(tentativa)
+        controle++
+
+        if (tentativa > numeroSecreto) {
+        alert(`Numero maior que o numero secreto, essa foi sua ${controle}ª tentativa`) 
+              
+    } else if(tentativa < numeroSecreto ){
+        alert(`Numero menor que o numero secreto, essa foi sua ${controle}ª tentativa`) 
+        
+    } else {
+        alert(`Você acertou na ${controle}ª tentativa!`)
+        break;
+    }        
+}
+
+    if (controle === maxDeTentativa) {
+        alert(`Suas tentativas acabaram! O número secreto era ${numeroSecreto} :) Seu historico de tentativas ${armazenamentoDeTentativas.join(' | ')}`)
+    } else {
+
+        alert(`Segue seu historico de tentativas ${armazenamentoDeTentativas.join(' | ')}`)
+    }
+
+    console.log(armazenamentoDeTentativas)
+
+    </script>
+</body>
+</html>
